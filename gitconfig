@@ -10,10 +10,10 @@
 [core]
 	editor = vim
 [alias]
-	s = status
-	l = log
-	d = diff
-	ca = commit --amend
 	c = commit
+	ca = commit --amend
+	d = diff
+	l = log
+	s = status
 [credential]
 	helper = store
