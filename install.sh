@@ -6,7 +6,7 @@ sudo apt install silversearcher-ag \
 	tmux
 
 ln -s $HOME/.dotfiles/vimrc .vimrc
-ln -s $HOME/.dotfiles/tmux.conf tmux.conf
+ln -s $HOME/.dotfiles/tmux.conf .tmux.conf
 ln -s $HOME/.dotfiles/gitconfig .gitconfig
 ln -s $HOME/.dotfiles/bashrc .bashrc
 
