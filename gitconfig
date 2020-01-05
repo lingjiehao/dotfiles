@@ -13,5 +13,7 @@
 	s = status
 	l = log
 	d = diff
+	ca = commit --amend
+	c = commit
 [credential]
 	helper = store
