@@ -1,0 +1,4 @@
+Host osboxes
+	HostName ddns.gobeyond.top
+	User osboxes
+	Port 50022
