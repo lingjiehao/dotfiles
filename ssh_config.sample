@@ -2,3 +2,6 @@ Host osboxes
 	HostName ddns.gobeyond.top
 	User osboxes
 	Port 50022
+#	IdentityFile ~/.ssh/targaryen.key
+#	LogLevel INFO
+#	Compression yes
