@@ -122,3 +122,5 @@ source ~/.dotfiles/bashmarks.sh
 
 alias cli_proxy='export http_proxy=127.0.0.1:1080 https_proxy=127.0.0.1:1080'
 alias cli_unproxy='unset http_proxy https_proxy'
+
+export MINICOM="-c on"
