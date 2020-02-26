@@ -14,6 +14,7 @@ deb_install_list = [
     'curl',
     'tmux',
     'silversearcher-ag',
+    'software-properties-common'
 ]
 
 
