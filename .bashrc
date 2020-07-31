@@ -96,15 +96,6 @@ alias la='ls -A'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -115,12 +106,33 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export CLASSPATH=$JAVA_HOME/lib
 
-source ~/.dotfiles/configs/bashmarks.sh
+stty stop ''
+# See https://askubuntu.com/questions/900923/how-to-make-tab-completion-append-slash-for-directory-symlinks
+bind 'set mark-symlinked-directories on'
 
-alias cli_proxy='export http_proxy=127.0.0.1:8118 https_proxy=127.0.0.1:8118'
-alias cli_unproxy='unset http_proxy https_proxy'
 
-export MINICOM="-c on"
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+if [ -f  ~/.dotfiles/bashmarks.sh ]; then
+    .  ~/.dotfiles/bashmarks.sh
+fi
+
+PROXY_SERVER=127.0.0.1
+alias proxy='\
+	export http_proxy=http://$PROXY_SERVER:10809 ;\
+	export https_proxy=http://$PROXY_SERVER:10809 ;\
+	export ftp_proxy=http://$PROXY_SERVER:10809 '
+alias unproxy='unset http_proxy https_proxy ftp_proxy'
+
+alias adbw='adb wait-for-device'
+alias shortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ "'
+alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "'
+
+# alias rpi='docker exec -it rpi bash'
+
+PATH="$HOME/.local/bin:$PATH"
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+# export CLASSPATH=$JAVA_HOME/lib
