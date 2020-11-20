@@ -1,9 +1,10 @@
-[http]
-	proxy = socks5://127.0.0.1:1080
-[https]
-	proxy = socks5://127.0.0.1:1080
+; [http]
+	; proxy = socks5://127.0.0.1:1080
+; [https]
+	; proxy = socks5://127.0.0.1:1080
 [user]
-	email = michael-hao@foxmail.com
+	; email = michael-hao@foxmail.com
+	email = haolj0823@thundersoft.com
 	name = Hao Lingjie
 [rerere]
 	enabled = false

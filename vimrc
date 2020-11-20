@@ -14,11 +14,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 Plug 'haya14busa/incsearch.vim'
 " Plug 'kien/ctrlp.vim'
-Plug 'majutsushi/tagbar'
-Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
+" Plug 'majutsushi/tagbar'
+" Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
 " Plug 'vim-scripts/taglist.vim'
-Plug 'mileszs/ack.vim'
-Plug 'vim-scripts/DoxygenToolkit.vim'
+" Plug 'mileszs/ack.vim'
+" Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()"}}}
 
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -33,7 +34,7 @@ set ts=4
 set sw=4
 set nu
 set ai
-set relativenumber 
+" set relativenumber 
 set mouse=a
 set fdm=marker
 
