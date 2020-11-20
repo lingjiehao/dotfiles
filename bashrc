@@ -116,33 +116,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -f  ~/.dotfiles/bashmarks.sh ]; then
-    .  ~/.dotfiles/bashmarks.sh
-fi
-
-if [ -f  ~/.dotfiles/adb.bash ]; then
-    .  ~/.dotfiles/adb.bash
-fi
-PROXY_SERVER=127.0.0.1
-alias proxy='\
-	export http_proxy=http://$PROXY_SERVER:10809 ;\
-	export https_proxy=http://$PROXY_SERVER:10809 ;\
-	export ftp_proxy=http://$PROXY_SERVER:10809 '
-alias unproxy='unset http_proxy https_proxy ftp_proxy'
-
-alias reposync='repo sync -cd --no-tags --no-clone-bundle -j8'
-
-alias adbw='adb wait-for-device'
-alias shortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ "'
-alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "'
+[ -f ~/.dotfiles/bashmarks.sh ] && source ~/.dotfiles/bashmarks.sh
+[ -f ~/.dotfiles/adb.bash ] && source ~/.dotfiles/adb.bash
 
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export USE_CCACHE=1
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 # export CLASSPATH=$JAVA_HOME/lib
-
-# alias rpi='docker exec -it rpi bash'
-alias opengrok='docker exec -it -w /var/opengrok/src opengrok sh'
-alias heart='docker exec -it heart bash'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
