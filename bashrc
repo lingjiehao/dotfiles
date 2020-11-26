@@ -116,6 +116,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+[ -f ~/.bashrc_me ] && source ~/.bashrc_me
 [ -f ~/.dotfiles/bashmarks.sh ] && source ~/.dotfiles/bashmarks.sh
 [ -f ~/.dotfiles/adb.bash ] && source ~/.dotfiles/adb.bash
 
