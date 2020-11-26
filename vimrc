@@ -37,6 +37,7 @@ set ai
 " set relativenumber 
 set mouse=a
 set fdm=marker
+set nowrap
 
 if has("autocmd")
 	  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
