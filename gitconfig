@@ -3,8 +3,7 @@
 ; [https]
 	; proxy = socks5://127.0.0.1:1080
 [user]
-	; email = michael-hao@foxmail.com
-	email = haolj0823@thundersoft.com
+	email = michael-hao@foxmail.com
 	name = Hao Lingjie
 [rerere]
 	enabled = false
@@ -17,13 +16,13 @@
 	dc = diff --cached
 	l = log
 	lg = log --pretty=oneline --graph
-	s = status
 	rh = reset --hard
 	rhh = reset --hard HEAD^
-	; pdft = push origin HEAD:refs/drafts/Melon-sdm429w-la1.0-vendor
-    ; pfor = push origin HEAD:refs/for/Melon-sdm429w-la1.0-vendor
+	s = status
 
 [credential]
 	helper = store
 [color]
 	ui = auto
+[include]
+	path = .gitconfig.me
