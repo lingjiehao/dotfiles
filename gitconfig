@@ -12,6 +12,8 @@
 [alias]
 	c = commit
 	ca = commit --amend
+	cabt = cherry-pick --abort
+	cc = cherry-pick --continue
 	d = diff
 	dc = diff --cached
 	l = log

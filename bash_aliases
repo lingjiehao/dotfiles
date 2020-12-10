@@ -11,6 +11,7 @@ alias shortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h
 alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "'
 
 alias reposync='repo sync -cd --no-tags --no-clone-bundle -j8'
+alias reporeset='repo forall -vc "git reset --hard && git clean -fd"'
 
 # alias rpi='docker exec -it rpi bash'
 alias opengrok='docker exec -it -w /var/opengrok/src opengrok sh'
