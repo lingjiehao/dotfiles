@@ -111,18 +111,40 @@ stty stop ''
 # See https://askubuntu.com/questions/900923/how-to-make-tab-completion-append-slash-for-directory-symlinks
 bind 'set mark-symlinked-directories on'
 
+# My Alias {{{
+PROXY_SERVER=127.0.0.1
+alias proxy='\
+	export http_proxy=http://$PROXY_SERVER:10809 ;\
+	export https_proxy=http://$PROXY_SERVER:10809 ;\
+	export ftp_proxy=http://$PROXY_SERVER:10809 '
+alias unproxy='unset http_proxy https_proxy ftp_proxy'
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+alias adbw='adb wait-for-device'
+alias shortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ "'
+alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "'
 
+alias reposync='repo sync -cd --no-tags --no-clone-bundle -j8'
+alias reporeset='repo forall -vc "git reset --hard && git clean -fd"'
+alias bkd='croot && make bootimage dtboimage -j$(($(nproc)+1)) |& tee build.log'
+alias flashkd='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img'
+alias flashkdr='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img && fastboot reboot'
+
+alias opengrok='docker exec -it -w /var/opengrok/src opengrok sh'
+alias heart='docker exec -it heart bash'
+# }}}
+
+# Source Files {{{
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 [ -f ~/.bashrc_me ] && source ~/.bashrc_me
 [ -f ~/.dotfiles/bashmarks.sh ] && source ~/.dotfiles/bashmarks.sh
 [ -f ~/.dotfiles/adb.bash ] && source ~/.dotfiles/adb.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# }}}
 
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+# Environment Variable {{{
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export USE_CCACHE=1
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 # export CLASSPATH=$JAVA_HOME/lib
+# }}}
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

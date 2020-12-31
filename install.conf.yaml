@@ -3,7 +3,6 @@
 
 - link:
     ~/.bashrc: bashrc
-    ~/.bash_aliases: bash_aliases
     ~/.bashrc_me: bashrc_me
     ~/.gitconfig: gitconfig
     ~/.gitconfig.me: gitconfig.me
