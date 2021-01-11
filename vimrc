@@ -19,7 +19,7 @@ Plug 'haya14busa/incsearch.vim'
 " Plug 'vim-scripts/taglist.vim'
 " Plug 'mileszs/ack.vim'
 " Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()"}}}
 
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -49,17 +49,18 @@ endif
 
 imap <leader>; <esc>$a;
 nmap <leader>; $a;<esc>;
-nmap <leader>sf :Leaderf function<CR>
-nmap <leader>si :Leaderf function<CR>
-map <F8> :Tagbar<CR>
+" nmap <leader>sf :Leaderf function<CR>
+" nmap <leader>si :Leaderf function<CR>
+" nnoremap <C-N> :bn<CR>
+" map <F8> :Tagbar<CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 " colorscheme{{{
 set t_Co=256
 let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
+" let g:molokai_original = 1
+" colorscheme molokai
 "支持透明背景
 hi Normal ctermbg = none
 "修改匹配括号的颜色
@@ -73,7 +74,6 @@ let g:airline_theme="simple"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 "设置切换Buffer快捷键"
-nnoremap <C-N> :bn<CR>
 " 关闭状态显示空白符号计数,这个对我用处不大"
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
