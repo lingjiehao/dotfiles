@@ -119,6 +119,9 @@ alias proxy='\
 	export ftp_proxy=http://$PROXY_SERVER:10809 '
 alias unproxy='unset http_proxy https_proxy ftp_proxy'
 
+alias today='date "+%Y-%m-%d"'
+alias now='date "+%Y-%m-%d %H:%M:%S"'
+
 alias adbw='adb wait-for-device'
 alias shortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ "'
 alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "'
