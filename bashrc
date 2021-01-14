@@ -129,8 +129,11 @@ alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@
 alias reposync='repo sync -cd --no-tags --no-clone-bundle -j8'
 alias reporeset='repo forall -vc "git reset --hard && git clean -fd"'
 alias bkd='croot && make bootimage dtboimage -j$(($(nproc)+1)) |& tee build.log'
+
 alias flashkd='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img'
 alias flashkdr='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img && fastboot reboot'
+alias flashxbl='fastboot flash xbl xbl.elf  && fastboot flash xbl_config xbl_config.elf'
+alias flashxblr='fastboot flash xbl xbl.elf  && fastboot flash xbl_config xbl_config.elf && fastboot reboot'
 
 alias opengrok='docker exec -it -w /var/opengrok/src opengrok sh'
 alias heart='docker exec -it heart bash'
