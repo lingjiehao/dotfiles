@@ -134,6 +134,7 @@ alias flashkd='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img'
 alias flashkdr='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img && fastboot reboot'
 alias flashxbl='fastboot flash xbl xbl.elf  && fastboot flash xbl_config xbl_config.elf'
 alias flashxblr='fastboot flash xbl xbl.elf  && fastboot flash xbl_config xbl_config.elf && fastboot reboot'
+alias flashpanel='fastboot oem select-display-panel'
 
 alias opengrok='docker exec -it -w /var/opengrok/src opengrok sh'
 alias heart='docker exec -it heart bash'
