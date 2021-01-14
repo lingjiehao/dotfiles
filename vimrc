@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'lervag/vimtex'
 Plug 'tomasr/molokai'
 Plug 'haya14busa/incsearch.vim'
+Plug 'tpope/vim-sleuth'
 " Plug 'kien/ctrlp.vim'
 " Plug 'majutsushi/tagbar'
 " Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
@@ -31,7 +32,8 @@ syntax enable
 filetype indent on
 set encoding=utf-8
 set ts=4
-set sw=4
+" set sw=4
+" set et
 set nu
 set ai
 " set relativenumber 
