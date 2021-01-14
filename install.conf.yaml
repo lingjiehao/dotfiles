@@ -9,3 +9,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
 
+    ~/.pip/pip.conf:
+      create: true
+      path: pip.conf
+
