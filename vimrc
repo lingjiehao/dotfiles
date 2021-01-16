@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-sleuth'
+Plug 'junegunn/vim-easy-align'
 " Plug 'kien/ctrlp.vim'
 " Plug 'majutsushi/tagbar'
 " Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
@@ -58,6 +59,15 @@ nmap <leader>; $a;<esc>;
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+vmap <Leader>a <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
+
+if !exists('g:easy_align_delimiters')
+  let g:easy_align_delimiters = {}
+endif
+let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
+
 " colorscheme{{{
 set t_Co=256
 let g:rehash256 = 1
