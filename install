@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 
-set -e
+if ! command -v dotbot &> /dev/null; then
+		echo "dotbot not found, install it using pip3"
+		if ! command -v pip3 &> /dev/null; then
+				echo "pip3 not found, installing..."
+				sudo apt install python3-pip
+				CMD="$HOME/.local/bin/dotbot"
+		fi
+		pip3 install -i https://pypi.doubanio.com/simple/ \
+				--trusted-host pypi.doubanio.com dotbot
+else
+		CMD=$(which dotbot)
+		echo "use dotbot in $CMD"
+fi
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+$CMD -c `pwd`/install.conf.yaml
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
-
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
