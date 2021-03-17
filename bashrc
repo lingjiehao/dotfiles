@@ -128,7 +128,7 @@ alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@
 
 alias reposync='repo sync -cd --no-tags --no-clone-bundle -j8'
 alias reporeset='repo forall -vc "git reset --hard && git clean -fd"'
-alias bkd='croot && make bootimage dtboimage -j$(($(nproc)+1)) |& tee build.log'
+alias bkd='croot && make bootimage dtboimage -j$(($(nproc)+1)) |& tee build.log; date'
 
 alias flashkd='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img'
 alias flashkdr='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img && fastboot reboot'

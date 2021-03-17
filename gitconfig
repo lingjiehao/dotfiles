@@ -2,9 +2,6 @@
 	; proxy = socks5://127.0.0.1:1080
 ; [https]
 	; proxy = socks5://127.0.0.1:1080
-[user]
-	email = michael-hao@foxmail.com
-	name = Hao Lingjie
 [rerere]
 	enabled = false
 [core]
@@ -20,7 +17,7 @@
 	lg = log --pretty=oneline --graph
 	rh = reset --hard
 	rhh = reset --hard HEAD^
-	s = status
+	s = status -s
 
 [credential]
 	helper = store
