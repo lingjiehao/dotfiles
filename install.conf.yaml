@@ -1,6 +1,5 @@
 - link:
     ~/.bashrc: bashrc
-    ~/.bashrc_me: bashrc_me
     ~/.gitconfig: gitconfig
     ~/.gitconfig.me: gitconfig.me
     ~/.tmux.conf: tmux.conf

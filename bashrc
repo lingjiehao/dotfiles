@@ -119,6 +119,10 @@ alias proxy='\
 	export ftp_proxy=http://$PROXY_SERVER:10809 '
 alias unproxy='unset http_proxy https_proxy ftp_proxy'
 
+if [ -z $(command -v ag) ] && [ $(command -v rg) ]; then
+	alias ag='rg'
+fi
+
 alias today='date "+%Y-%m-%d"'
 alias now='date "+%Y-%m-%d %H:%M:%S"'
 
@@ -128,29 +132,20 @@ alias unshortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@
 
 alias reposync='repo sync -cd --no-tags --no-clone-bundle -j8'
 alias reporeset='repo forall -vc "git reset --hard && git clean -fd"'
-alias bkd='croot && make bootimage dtboimage -j$(($(nproc)+1)) |& tee build.log; date'
-
-alias flashkd='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img'
-alias flashkdr='fastboot flash boot boot.img && fastboot flash dtbo dtbo.img && fastboot reboot'
-alias flashxbl='fastboot flash xbl xbl.elf  && fastboot flash xbl_config xbl_config.elf'
-alias flashxblr='fastboot flash xbl xbl.elf  && fastboot flash xbl_config xbl_config.elf && fastboot reboot'
-alias flashpanel='fastboot oem select-display-panel'
-
-alias opengrok='docker exec -it -w /var/opengrok/src opengrok sh'
-alias heart='docker exec -it heart bash'
 # }}}
 
 # Source Files {{{
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
-[ -f ~/.bashrc_me ] && source ~/.bashrc_me
-[ -f ~/.dotfiles/bashmarks.sh ] && source ~/.dotfiles/bashmarks.sh
-[ -f ~/.dotfiles/adb.bash ] && source ~/.dotfiles/adb.bash
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -d ~/.dotfiles/sources ]; then
+	for f in `ls ~/.dotfiles/sources`; do
+		source ~/.dotfiles/sources/$f
+	done
+fi
 # }}}
 
 # Environment Variable {{{
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export USE_CCACHE=1
+export PATH="$HOME/bin:$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
+
+# export USE_CCACHE=1
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 # export CLASSPATH=$JAVA_HOME/lib
 # }}}

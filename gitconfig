@@ -1,7 +1,12 @@
+[user]
+	email = hao.lingjie@github.com
+	name = Hao Lingjie
+
 ; [http]
 	; proxy = socks5://127.0.0.1:1080
 ; [https]
 	; proxy = socks5://127.0.0.1:1080
+
 [rerere]
 	enabled = false
 [core]
@@ -17,11 +22,13 @@
 	lg = log --pretty=oneline --graph
 	rh = reset --hard
 	rhh = reset --hard HEAD^
-	s = status -s
+	s = status
+;	s = status -s
+;	pdft = push gitsrv HEAD:refs/drafts/<branch-name>
+;	pfor = push gitsrv HEAD:refs/for/<branch-name>
 
 [credential]
 	helper = store
 [color]
 	ui = auto
-[include]
-	path = .gitconfig.me
+
