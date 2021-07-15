@@ -112,19 +112,19 @@ stty stop ''
 bind 'set mark-symlinked-directories on'
 
 # My Alias {{{
-PROXY_SERVER=127.0.0.1
+PROXY_SERVER=127.0.0.1:10809
 alias proxy='\
-	export http_proxy=http://$PROXY_SERVER:10809 ;\
-	export https_proxy=http://$PROXY_SERVER:10809 ;\
-	export ftp_proxy=http://$PROXY_SERVER:10809 '
+  export http_proxy=http://$PROXY_SERVER ;\
+  export https_proxy=http://$PROXY_SERVER ;\
+  export ftp_proxy=http://$PROXY_SERVER '
 alias unproxy='unset http_proxy https_proxy ftp_proxy'
-
-if [ -z $(command -v ag) ] && [ $(command -v rg) ]; then
-	alias ag='rg'
-fi
 
 alias today='date "+%Y-%m-%d"'
 alias now='date "+%Y-%m-%d %H:%M:%S"'
+
+if [ -z "$(command -v ag)" ] && [ "$(command -v rg)" ]; then
+  alias ag='rg'
+fi
 
 alias adbw='adb wait-for-device'
 alias shortd='export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ "'
@@ -136,17 +136,17 @@ alias reporeset='repo forall -vc "git reset --hard && git clean -fd"'
 
 # Source Files {{{
 if [ -d ~/.dotfiles/sources ]; then
-	for f in `ls ~/.dotfiles/sources`; do
-		source ~/.dotfiles/sources/$f
-	done
+  for f in `ls ~/.dotfiles/sources`; do
+    source ~/.dotfiles/sources/$f
+  done
 fi
 # }}}
 
 # Environment Variable {{{
 export PATH="$HOME/bin:$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
 
-# export USE_CCACHE=1
-# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-# export CLASSPATH=$JAVA_HOME/lib
+#export USE_CCACHE=1
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+#export CLASSPATH=$JAVA_HOME/lib
 # }}}
 
