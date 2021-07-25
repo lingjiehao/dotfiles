@@ -122,8 +122,13 @@ alias unproxy='unset http_proxy https_proxy ftp_proxy'
 alias today='date "+%Y-%m-%d"'
 alias now='date "+%Y-%m-%d %H:%M:%S"'
 
-if [ -z "$(command -v ag)" ] && [ "$(command -v rg)" ]; then
+if [ "$(command -v rg)" ] && [ "$(command -v ag)" ]; then
   alias ag='rg'
+fi
+
+if [ "$(command -v nvim)" ]; then
+	alias vi='nvim'
+	alias vim='nvim'
 fi
 
 alias adbw='adb wait-for-device'

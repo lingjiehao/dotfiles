@@ -12,3 +12,7 @@
     ~/.vim/autoload/plug.vim:
       create: true
       path: plug.vim
+
+    ~/.config/nvim/init.vim:
+      create: true
+      path: nvimrc
