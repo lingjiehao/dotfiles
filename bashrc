@@ -145,10 +145,11 @@ if [ -d ~/.dotfiles/sources ]; then
     source ~/.dotfiles/sources/$f
   done
 fi
-# }}}
+
+[ -f ~/.cargo/env ] && source ~/.cargo/env
 
 # Environment Variable {{{
-export PATH="$HOME/bin:$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
+#export PATH="$HOME/bin:$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
 
 #export USE_CCACHE=1
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
