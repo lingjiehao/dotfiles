@@ -3,33 +3,31 @@
     name = Hao Lingjie
 
 [rerere]
-	enabled = false
+    enabled = false
 [core]
-	editor = vim
+    editor = vim
 [color]
-	ui = auto
+    ui = auto
 [credential]
-	helper = store
+    helper = store
 [alias]
-	c = commit
-	ca = commit --amend
-	cabt = cherry-pick --abort
-	cc = cherry-pick --continue
-	d = diff
-	dc = diff --cached
-	l = log
-	lg = log --pretty=oneline --graph
-	rh = reset --hard
-	rhh = reset --hard HEAD^
-	s = status
+    c = commit
+    ca = commit --amend
+    cabt = cherry-pick --abort
+    cc = cherry-pick --continue
+    d = diff
+    dc = diff --cached
+    l = log
+    lg = log --pretty=oneline --graph
+    rh = reset --hard
+    rhh = reset --hard HEAD^
+    s = status
 ;	s = status -s
 ;	pdft = push gitsrv HEAD:refs/drafts/<branch-name>
 ;	pfor = push gitsrv HEAD:refs/for/<branch-name>
+    unproxy = config --global --remove-section https
+    proxy = config --global https.proxy socks5://127.0.0.1:10808
 
 ;[url "https://gp.mypri.cloud/https://github.com"]
-;    insteadOf = https://github.com
+;	insteadOf = https://github.com
 
-;[http]
-;    proxy = socks5://127.0.0.1:1080
-;[https]
-;    proxy = socks5://127.0.0.1:1080
