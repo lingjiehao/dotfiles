@@ -1,7 +1,6 @@
 [user]
     email = hao.lingjie@github.com
     name = Hao Lingjie
-
 [rerere]
     enabled = false
 [core]
@@ -13,12 +12,13 @@
 [alias]
     c = commit
     ca = commit --amend
+    can = commit --amend --no-edit
     cabt = cherry-pick --abort
     cc = cherry-pick --continue
     d = diff
     dc = diff --cached
-    l = log
-    lg = log --pretty=oneline --graph
+    l = log --oneline --decorate --graph --exclude=refs/stash
+    lg = log --decorate=full
     rh = reset --hard
     rhh = reset --hard HEAD^
     s = status
@@ -28,6 +28,6 @@
     unproxy = config --global --remove-section https
     proxy = config --global https.proxy socks5://127.0.0.1:10808
 
-;[url "https://gp.mypri.cloud/https://github.com"]
-;	insteadOf = https://github.com
+; [url "https://gp.mylab.top/https://github.com"]
+	; insteadOf = https://github.com
 

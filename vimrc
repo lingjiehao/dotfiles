@@ -24,7 +24,8 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'easymotion/vim-easymotion'
 Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
@@ -95,13 +96,14 @@ let g:rainbow_active = 1
 " }}}
 
 " vim-airline {{{
-let g:airline_theme="simple"
+let g:airline_theme="papercolor"
 " 关闭状态显示空白符号计数
 let g:airline#extensions#whitespace#enabled = 0
 " }}}
 
 " colorscheme{{{
-colorscheme molokai
+set background=dark
+colorscheme PaperColor
 
 " Enable true color 启用终端24位色
 if exists('+termguicolors')
